@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html">Home</a>
+            <a href="moisture.html">Soil Moisture Level</a>
+            <a href="temperature.html">Temperature</a>
+        </div>
+        <div class="prediction">
+            <h4>Number of Days: <span id="days"></span></h4>
+            <h4>Number of Hours: <span id="hours"></span></h4>
+            <h4>Number of Minutes: <span id="minutes"></span></h4>
+            <h4>Number of Seconds: <span id="seconds"></span></h4>
+            <h4>AI Prediction : <span id="prediction"></span></h4>
+        </div>
+    </div>
+    <script>
+        fetch('/data')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('days').textContent = data.days;
+                document.getElementById('hours').textContent = data.hours;
+                document.getElementById('minutes').textContent = data.minutes;
+                document.getElementById('seconds').textContent = data.seconds;
+                document.getElementById('prediction').textContent = data.prediction;
+            });
+    </script>
+</body>
+</html>

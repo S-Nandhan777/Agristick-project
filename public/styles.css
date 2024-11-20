@@ -1,0 +1,119 @@
+/* Reset some default styles for consistency across browsers */
+body, h1, h4, p, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply a base font family and color */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Container styling */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Header styling */
+.header {
+    display: flex;
+    justify-content: space-around;
+    background-color: #4CAF50;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+/* Content styling */
+.content {
+    padding: 20px;
+}
+
+.content h1 {
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+.content p {
+    margin-bottom: 20px;
+}
+
+.images {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.images .image {
+    width: 30%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section styling */
+.moisturelevel, .temperature, .prediction {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+h4 {
+    margin-bottom: 10px;
+    color: #4CAF50;
+}
+
+h4:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 0 0 8px 8px;
+    margin-top: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header a {
+        margin: 5px 0;
+    }
+
+    .images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .images .image {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}

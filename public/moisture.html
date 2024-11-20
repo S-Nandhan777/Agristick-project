@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Moisture Level</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html">Home</a>
+            <a href="temperature.html">Temperature</a>
+            <a href="prediction.html">Prediction</a>
+        </div>
+        <div class="moisturelevel">
+            <h4>Top Layer: <span id="topLayer"></span></h4>
+            <h4>Middle Layer: <span id="middleLayer"></span></h4>
+            <h4>Bottom Layer: <span id="bottomLayer"></span></h4>
+        </div>
+    </div>
+    <script>
+        fetch('/data')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('topLayer').textContent = data.topLayer;
+                document.getElementById('middleLayer').textContent = data.middleLayer;
+                document.getElementById('bottomLayer').textContent = data.bottomLayer;
+            });
+    </script>
+</body>
+</html>
